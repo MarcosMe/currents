@@ -70,7 +70,7 @@
     let btcMined = 0.0093986; 
 	    
     var Httpreq = new XMLHttpRequest(); // a new request
-    Httpreq.open("GET",'https://bitmb.pt/api?average=1',false);
+    Httpreq.open("GET",'https://bitmb.net/api?average=1',false);
     Httpreq.send(null);
     let responseBTCticker = JSON.parse(Httpreq.responseText);
     console.log(responseBTCticker);
