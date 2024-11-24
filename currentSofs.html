@@ -89,11 +89,11 @@
     let profit = euroBTCticker-1000;
     document.getElementById('profit').innerHTML = Math.round(profit * 100) / 100;
 
-    let percentage = (100 * (profit-1000)) / 1000;
+    let percentage = ( (profit-1000) / euroBTCticker) * 100;
     if(percentage <= 0){
 	    percentage=percentage+100;
     }
-		    console.log(percentage);
+		    //console.log(percentage);
     document.getElementById('percentage').innerHTML = Math.round(percentage * 100) / 100;
 		    };
     </script>
