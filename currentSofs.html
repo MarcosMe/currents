@@ -68,9 +68,9 @@
     Httpreq.open("GET",'https://bitmb.net/api?average=1',false);
     Httpreq.send(null);
     let responseBTCticker = JSON.parse(Httpreq.responseText);
-    console.log(responseBTCticker);
+    //console.log(responseBTCticker);
     let euroBTCticker = (responseBTCticker * btcSofs);
-    console.log(euroBTCticker);
+    //console.log(euroBTCticker);
     document.getElementById('euroBTC').innerHTML = Math.round(euroBTCticker * 100) / 100;		    
 		    
     /*var Httpreq = new XMLHttpRequest(); // a new request
@@ -89,7 +89,7 @@
     let profit = euroBTCticker-1000;
     document.getElementById('profit').innerHTML = Math.round(profit * 100) / 100;
 
-    let percentage = ( (profit-1000) / euroBTCticker) * 100;
+    let percentage = ( profit / 1000) * 100;
     if(percentage <= 0){
 	    percentage=percentage+100;
     }
