@@ -18,16 +18,15 @@
         Current status of investment  
       </div>  
       <div class="subtitle has-text-white has-text-centered">
-        <br>
+        <a href="https://bitmb.net/" target="_blank" style="color:white;">
+          Current 1 BTC = <span id="BTC"></span>€
+        </a>  
         <br> 
         <span class="has-tooltip-top" data-tooltip="0.01153114+0.01147025+0.01062730">
         From 0.03362869 BTC
         </span>	      
         <br>
-        <span class="has-tooltip-bottom" data-tooltip="<script>docWrite(responseBTCticker)</script>">
         Current EUR: <span id="euroBTC"></span>€
-        </span>
-        <br>
         <br>
         <span class="has-tooltip-bottom" data-tooltip="500+500+1000">
         Investment: 2000 € 
@@ -69,7 +68,7 @@
         <footer class="footer has-background-white-ter">
             <div class="content has-text-centered">
                 <p>
-                    <i class="far fa-copyright"></i> 2021 Marcos Mendes
+                    <i class="far fa-copyright"></i> 2024 Marcos Mendes
                 </p>
 		
                 <p>
@@ -91,6 +90,7 @@
     Httpreq.open("GET",'https://bitmb.net/api?average=1',false);
     Httpreq.send(null);
     let responseBTCticker = JSON.parse(Httpreq.responseText);
+    document.getElementById('BTC').innerHTML = responseBTCticker;	
     //console.log(responseBTCticker);
     let euroBTCticker = (responseBTCticker * btcSofs);
     //console.log(euroBTCticker);
