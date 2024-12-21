@@ -19,11 +19,15 @@
       </div>  
       <div class="subtitle has-text-white has-text-centered">
       <br>  
-	      From 0.02300139 BTC
+	      From 0.03362869 BTC 
+        <br>
+        (0.01153114+0.01147025+0.01062730)
         <br>
         Current EUR: <span id="euroBTC"></span>€
         <br>
-        Investment: 1000 €
+        Investment: 2000 € 
+        <br>
+        (500+500+1000)
       </div>
       <div class="title has-text-white has-text-centered"> 
         <br>
@@ -62,7 +66,7 @@
     </body>
     <script>
 	    window.onload = function(){
-    let btcSofs = 0.02300139; /*0.01153114+0.01147025*/
+    let btcSofs = 0.03362869; /*0.01153114+0.01147025+0.01062730*/
 	    
     var Httpreq = new XMLHttpRequest(); // a new request
     Httpreq.open("GET",'https://bitmb.net/api?average=1',false);
@@ -86,10 +90,10 @@
     //let total = euroBTCticker;
     //document.getElementById('total').innerHTML = Math.round(total * 100) / 100;
 
-    let profit = euroBTCticker-1000;
+    let profit = euroBTCticker-2000;
     document.getElementById('profit').innerHTML = Math.round(profit * 100) / 100;
 
-    let percentage = ( profit / 1000) * 100;
+    let percentage = ( profit / 2000) * 100;
     if(percentage <= 0){
 	    percentage=percentage+100;
     }
