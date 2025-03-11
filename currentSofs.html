@@ -89,7 +89,7 @@
     let btcSofs = 0.03362869; /*0.01153114+0.01147025+0.01062730*/
 	    
     var Httpreq = new XMLHttpRequest(); // a new request
-    Httpreq.open("GET",'https://bitmb.net/api?average=1',false);
+    Httpreq.open("GET",'https://bitmb.laravel.cloud/api?average=1',false);
     Httpreq.send(null);
     let responseBTCticker = JSON.parse(Httpreq.responseText);
     document.getElementById('BTC').innerHTML = responseBTCticker;	
