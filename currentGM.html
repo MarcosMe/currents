@@ -69,13 +69,24 @@
     let btcRui = 0.03804;
     let ethMined = 1.53951157;
     let btcMined = 0.02130561; 
-	    
-    var Httpreq = new XMLHttpRequest(); // a new request
-    Httpreq.withCredentials = true;
-    Httpreq.open("GET",'https://bitmb.laravel.cloud/api?average=1',false);
-    Httpreq.setRequestHeader('Access-Control-Allow-Origin', '*');
-    Httpreq.send();
-    let responseBTCticker = JSON.parse(Httpreq.responseText);
+
+
+		    const requestOptions = {
+  method: "GET",
+  redirect: "follow"
+};
+
+fetch("https://bitmb.laravel.cloud/api", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
+		    
+    //var Httpreq = new XMLHttpRequest(); // a new request
+    //Httpreq.withCredentials = true;
+    //Httpreq.open("GET",'https://bitmb.laravel.cloud/api?average=1',false);
+    //Httpreq.setRequestHeader('Access-Control-Allow-Origin', '*');
+    //Httpreq.send();
+    let responseBTCticker = JSON.parse(response);
     console.log(responseBTCticker);
     let euroBTCticker = (responseBTCticker * btcRui) + (responseBTCticker * btcMined);
     console.log(euroBTCticker);
