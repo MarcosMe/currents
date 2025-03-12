@@ -71,8 +71,9 @@
     let btcMined = 0.02130561; 
 	    
     var Httpreq = new XMLHttpRequest(); // a new request
+    Httpreq.withCredentials = true;
     Httpreq.open("GET",'https://bitmb.laravel.cloud/api?average=1',false);
-    Httpreq.send(null);
+    Httpreq.send();
     let responseBTCticker = JSON.parse(Httpreq.responseText);
     console.log(responseBTCticker);
     let euroBTCticker = (responseBTCticker * btcRui) + (responseBTCticker * btcMined);
