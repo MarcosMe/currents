@@ -50,7 +50,7 @@
         <footer class="footer has-background-white-ter">
             <div class="content has-text-centered">
                 <p>
-                    <i class="far fa-copyright"></i> 2024 Marcos Mendes
+                    <i class="far fa-copyright"></i> 2025 Marcos Mendes
                 </p>
 		
                 <p>
@@ -69,23 +69,10 @@
     let btcRui = 0.03804;
     let ethMined = 1.53951157;
     let btcMined = 0.02130561; 
-
-
-		    const requestOptions = {
-  method: "GET",
-  redirect: "follow"
-};
-
-fetch("https://bitmb.laravel.cloud/api", requestOptions)
-  .then((response) => response.text())
-  .then((result) => console.log(result))
-  .catch((error) => console.error(error));
 		    
-    //var Httpreq = new XMLHttpRequest(); // a new request
-    //Httpreq.withCredentials = true;
-    //Httpreq.open("GET",'https://bitmb.laravel.cloud/api?average=1',false);
-    //Httpreq.setRequestHeader('Access-Control-Allow-Origin', '*');
-    //Httpreq.send();
+    var Httpreq = new XMLHttpRequest(); // a new request
+    Httpreq.open("GET",'https://bitmb.laravel.cloud/api?average=1',false);
+    Httpreq.send();
     let responseBTCticker = JSON.parse(response);
     console.log(responseBTCticker);
     let euroBTCticker = (responseBTCticker * btcRui) + (responseBTCticker * btcMined);
