@@ -72,8 +72,8 @@
 	    
     var Httpreq = new XMLHttpRequest(); // a new request
     Httpreq.withCredentials = true;
-    Httpreq.setRequestHeader('Access-Control-Allow-Origin', '*');
     Httpreq.open("GET",'https://bitmb.laravel.cloud/api?average=1',false);
+    Httpreq.setRequestHeader('Access-Control-Allow-Origin', '*');
     Httpreq.send();
     let responseBTCticker = JSON.parse(Httpreq.responseText);
     console.log(responseBTCticker);
