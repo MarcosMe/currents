@@ -91,7 +91,7 @@ fetch("https://bitmb.laravel.cloud/api?average=1", requestOptions)
     let responseBTCticker = JSON.parse(Httpreq.responseText);
     //let responseBTCticker = JSON.parse(response);
     console.log(responseBTCticker);
-    let euroBTCticker = (responseBTCticker * btcRui) + (responseBTCticker * btcMined);
+    let euroBTCticker = (responseBTCticker.EUR.last * btcRui) + (responseBTCticker.EUR.last * btcMined);
     console.log(euroBTCticker);
     document.getElementById('euroBTC').innerHTML = Math.round(euroBTCticker * 100) / 100;		    
 		    
