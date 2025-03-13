@@ -72,19 +72,15 @@
 
 // WARNING: For GET requests, body is set to null by browsers.
 
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
+const requestOptions = {
+  method: "GET",
+  redirect: "follow"
+};
 
-xhr.addEventListener("readystatechange", function() {
-  if(this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-
-xhr.open("GET", "https://bitmb.laravel.cloud/api");
-
-xhr.send();
-console.log(response);
+fetch("https://bitmb.laravel.cloud/api", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
 		    
     /*var Httpreq = new XMLHttpRequest(); // a new request
     Httpreq.open("GET",'https://bitmb.laravel.cloud/api?average=1',false);
