@@ -97,9 +97,10 @@
     Httpreq.open("GET",'https://blockchain.info/ticker',false);
     Httpreq.send(null);
     let responseBTCticker = JSON.parse(Httpreq.responseText);
-    console.log(responseBTCticker);
+    document.getElementById('BTC').innerHTML = responseBTCticker.EUR.last;	
+    //console.log(responseBTCticker);
     let euroBTCticker = (responseBTCticker.EUR.last * btcSofs);
-    console.log(euroBTCticker);
+    //console.log(euroBTCticker);
     document.getElementById('euroBTC').innerHTML = Math.round(euroBTCticker * 100) / 100;		    
 		    
     /*var Httpreq = new XMLHttpRequest(); // a new request
