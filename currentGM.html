@@ -77,7 +77,7 @@
     Httpreq.open("GET",'https://blockchain.info/ticker',false);
     Httpreq.send(null);
     let responseBTCticker = JSON.parse(Httpreq.responseText);*/
-    let responseBTCticker = JSON.parse(response);
+    let responseBTCticker = JSON.parse(Httpreq.responseText);
     console.log(responseBTCticker);
     let euroBTCticker = (responseBTCticker * btcRui) + (responseBTCticker * btcMined);
     console.log(euroBTCticker);
