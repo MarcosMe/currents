@@ -104,12 +104,17 @@
     document.getElementById('euroBTC').innerHTML = Math.round(euroBTC * 100) / 100;	
 	*/	    
 		    
-    var Httpreq = new XMLHttpRequest(); // a new request
+    /*var Httpreq = new XMLHttpRequest(); // a new request
     Httpreq.open("GET",'https://api.blockchain.com/v3/exchange/tickers/ETH-EUR',false);
     Httpreq.send(null);
     let responseETH = JSON.parse(Httpreq.responseText); 
+    console.log(responseETH);*/
+    var Httpreq = new XMLHttpRequest(); // a new request
+    Httpreq.open("GET",'https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=eur',false);
+    Httpreq.send(null);
+    let responseETH = JSON.parse(Httpreq.responseText); 
     console.log(responseETH);
-    let euroETH = responseETH.last_trade_price * ethMined;
+    let euroETH = responseETH.ethereum.eur * ethMined;
     console.log(euroETH);
     document.getElementById('euroETH').innerHTML = Math.round(euroETH * 100) / 100;
 		    
