@@ -113,15 +113,11 @@
     //let total = euroBTCticker;
     //document.getElementById('total').innerHTML = Math.round(total * 100) / 100;
 
-    let profit = euroBTCticker-2000;
-    document.getElementById('profit').innerHTML = Math.round(profit * 100) / 100;
+    let profit = euroBTCticker - 2000;
+	document.getElementById('profit').innerHTML = Math.round(profit * 100) / 100;
 
-    let percentage = ( profit / 2000) * 100;
-    if(percentage <= 0){
-	    percentage=percentage+100;
-    }
-		    //console.log(percentage);
-    document.getElementById('percentage').innerHTML = Math.round(percentage * 100) / 100;
+	let percentage = (profit / 2000) * 100;
+	document.getElementById('percentage').innerHTML = Math.round(percentage * 100) / 100;
 		    };
     </script>
 </html>
